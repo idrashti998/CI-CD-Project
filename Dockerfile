@@ -1,4 +1,4 @@
 FROM docker.io/redhat/ubi8
 RUN  yum install httpd -y 
-RUN echo "This is working" > /var/www/html/index.html
+COPY index.html /var/www/html
 CMD  [“/usr/sbin/httpd”, “-D”, “FOREGROUND”]
